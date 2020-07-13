@@ -92,5 +92,5 @@ new_data = pd.DataFrame(data, columns = ['pregnant','insulin','bmi','age','gluco
 
 #Predict On new Data
 new_pred = logreg.predict(new_data)
-new_pred
+print(new_pred)
 
