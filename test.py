@@ -42,8 +42,8 @@ plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
 
 from sklearn.metrics import accuracy_score
-a = accuracy_score(y_test, y_pred)
-print (a) 
+print(accuracy_score(y_test, y_pred))
+
 
 
 # Visualising the Training set results
@@ -84,13 +84,19 @@ plt.legend()
 plt.show()
 
 
-# initialize list of lists 
-data = [[6, 0, 33.6, 50, 148, 72, 0.627]] 
+# # initialize list of lists 
+# data = [[6, 0, 33.6, 50, 148, 72, 0.627]] 
   
-# Create the pandas DataFrame 
-new_data = pd.DataFrame(data, columns = ['pregnant','insulin','bmi','age','glucose','bp','pedigree']) 
+# # Create the pandas DataFrame 
+# new_data = pd.DataFrame(data, columns = ['pregnant','insulin','bmi','age','glucose','bp','pedigree']) 
 
-#Predict On new Data
-new_pred = logreg.predict(new_data)
-print(new_pred)
+# #Predict On new Data
+# new_pred = logreg.predict(new_data)
+# print(new_pred)
 
+
+import pickle
+pickle.dump(classifier, open('new.pkl', 'wb'))
+new_model = pickle.load(open('new.pkl','rb'))
+
+print(new_model.predict([[1,0,26.6,31,85,66,0.35]]))
