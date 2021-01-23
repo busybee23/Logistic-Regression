@@ -1,1 +1,3 @@
-Repo for all applied Logistic Regression problems.
+# PROJECTS 
+### 1. HOML 
+### 2. House Price Prediction
